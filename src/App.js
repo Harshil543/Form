@@ -1,11 +1,11 @@
 import "./App.css";
-import Curring from "./componant/Curring";
-import Form from "./componant/Form";
+// import Curring from "./c omponant/Curring";
+import Login from "./componant/Login";
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <Login />
       {/* <Curring /> */}
     </div>
   );
