@@ -75,7 +75,7 @@ function Signup() {
               />
               <div style={{ height: "20px" }}>
                 {emailerror ? (
-                  <span style={{ color: "red" }}>Invalid Email...</span>
+                  <span style={{ color: "#ff000d" }}>Invalid Email...</span>
                 ) : (
                   ""
                 )}
@@ -92,7 +92,7 @@ function Signup() {
               />
               <div style={{ height: "20px" }}>
                 {passworderror ? (
-                  <span style={{ color: "red" }}>Invalid Password...</span>
+                  <span style={{ color: "#ff000d" }}>Invalid Password...</span>
                 ) : (
                   ""
                 )}
