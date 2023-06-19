@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./SCSS/signup.scss";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -52,53 +53,57 @@ function Signup() {
     setPassword("");
     setEmail("");
   };
+
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ height: "100vh" }}
-      className="d-flex justify-content-center container-fluid "
-    >
-      <div className="d-flex flex-column justify-content-center align-items-center">
+    <div className="row">
+      <form
+        onSubmit={handleSubmit}
+        style={{ height: "100vh" }}
+        className="form d-flex justify-content-center container-fluid col-6"
+      >
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <h1>Sign up</h1>
-          <div className="mt-4">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Username or email...."
-              maxlength="30"
-              alue={email}
-              onChange={EmailError}
-            />
-            <div style={{ height: "20px" }}>
-              {emailerror ? (
-                <span style={{ color: "red" }}>Invalid Email...</span>
-              ) : (
-                ""
-              )}
+          <div className="d-flex flex-column justify-content-center align-items-center">
+            <h1 className="text">Sign Up</h1>
+            <div className="mt-4">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Username or email...."
+                maxlength="30"
+                alue={email}
+                onChange={EmailError}
+              />
+              <div style={{ height: "20px" }}>
+                {emailerror ? (
+                  <span style={{ color: "red" }}>Invalid Email...</span>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
-          </div>
-          <div className="m-4">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Password"
-              maxlength="15"
-              value={password}
-              onChange={PasswordError}
-            />
-            <div style={{ height: "20px" }}>
-              {passworderror ? (
-                <span style={{ color: "red" }}>Invalid Password...</span>
-              ) : (
-                ""
-              )}
+            <div className="m-4">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Password"
+                maxlength="15"
+                value={password}
+                onChange={PasswordError}
+              />
+              <div style={{ height: "20px" }}>
+                {passworderror ? (
+                  <span style={{ color: "red" }}>Invalid Password...</span>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
+            <button className="button2">Submit</button>
           </div>
-          <button className="btn btn-dark">Submit</button>
         </div>
-      </div>
-    </form>
+      </form>
+      <div className="col-6"></div>
+    </div>
   );
 }
 
