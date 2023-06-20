@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./SCSS/signup.scss";
 
-export default function Form() {
+function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailerror, setEmailerror] = useState(false);
@@ -52,52 +53,63 @@ export default function Form() {
     setPassword("");
     setEmail("");
   };
+
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ height: "100vh" }}
-      className="d-flex justify-content-center container-fluid "
-    >
-      <div className="d-flex flex-column justify-content-center align-items-center">
+    <div className="main d-flex">
+      <form
+        onSubmit={handleSubmit}
+        style={{ height: "100vh" }}
+        className="form col-6 d-flex justify-content-center align-items-center"
+      >
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <h1>Login</h1>
-          <div className="mt-4">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Username or email...."
-              maxlength="30"
-              alue={email}
-              onChange={EmailError}
-            />
-            <div style={{ height: "20px" }}>
-              {emailerror ? (
-                <span style={{ color: "red" }}>Invalid Email...</span>
-              ) : (
-                ""
-              )}
+          <div className="d-flex flex-column justify-content-center align-items-center">
+            <div className="hadding">
+              <h2 className="text">Login</h2>
+              <h1 className="big-text">Login</h1>
             </div>
-          </div>
-          <div className="m-4">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Password"
-              maxlength="15"
-              value={password}
-              onChange={PasswordError}
-            />
-            <div style={{ height: "20px" }}>
-              {passworderror ? (
-                <span style={{ color: "red" }}>Invalid Password...</span>
-              ) : (
-                ""
-              )}
+            <div className="mt-4">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Username or email...."
+                maxlength="30"
+                alue={email}
+                onChange={EmailError}
+              />
+              <div style={{ height: "20px" }}>
+                {emailerror ? (
+                  <span style={{ color: "#ff000d" }}>Invalid Email...</span>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
+            <div className="m-4">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Password"
+                maxlength="15"
+                value={password}
+                onChange={PasswordError}
+              />
+              <div style={{ height: "20px" }}>
+                {passworderror ? (
+                  <span style={{ color: "#ff000d" }}>Invalid Password...</span>
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
+            <button className="button2">Submit</button>
           </div>
-          <button className="btn btn-dark">Submit</button>
         </div>
+      </form>
+      <div className="col-6">
+        <img src="signup.jpg" width="500" height="600" />
       </div>
-    </form>
+    </div>
   );
 }
+
+export default Signup;
