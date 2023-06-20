@@ -55,15 +55,18 @@ function Signup() {
   };
 
   return (
-    <div className="row">
+    <div className="main d-flex">
       <form
         onSubmit={handleSubmit}
         style={{ height: "100vh" }}
-        className="form d-flex justify-content-center container-fluid col-6"
+        className="form col-6 d-flex justify-content-center align-items-center"
       >
         <div className="d-flex flex-column justify-content-center align-items-center">
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <h1 className="text">Sign Up</h1>
+            <div className="hadding">
+              <h2 className="text">Sign Up</h2>
+              <h1 className="big-text">Sign Up</h1>
+            </div>
             <div className="mt-4">
               <input
                 type="text"
@@ -102,7 +105,9 @@ function Signup() {
           </div>
         </div>
       </form>
-      <div className="col-6"></div>
+      <div className="col-6">
+        <img src="signup.jpg" width="500" height="600" />
+      </div>
     </div>
   );
 }
